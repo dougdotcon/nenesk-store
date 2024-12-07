@@ -1,0 +1,281 @@
+@import url('./background.css');
+@import url('./header.css');
+@import url('./main.css');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  --text: #EDF1F7;
+  --red: #B19CD9; /* Roxo claro */
+  --blue: #FFA500; /* Laranja */
+  --green: #0077BE; /* Azul oceano */
+  --yellow: #FFB6C1; /* Rosa claro */
+}
+
+body, button, a {
+  color: var(--text);
+  font: 400 1rem "Mukta", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.div-esquerda{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	background-color: black;
+	width: 18em;
+	left: 0;
+
+}
+.div-direita{
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin-left: 18em;
+	height: 100%;
+}
+.menu ul{
+	list-style-type: none;
+	padding-left: 0;
+}
+.nome{
+	color: white;
+	font-weight: 100;
+	text-align: center;
+	font-family: 'SEGOE UI',sans-serif;
+}
+.titulo{
+	color: #292929;
+	font-weight: 100;
+	text-align: center;
+	font-family: 'SEGOE UI',sans-serif;
+}
+.menu{
+	padding-top: 0.1em;
+	padding-bottom: 0.2em;
+	background-color: #C7C7C7;
+	height: auto;
+}
+.menu li{
+	font-family: 'SEGOE UI',sans-serif;
+	color: black;
+	text-align: center;
+	width: 16.5em;
+	height: 2em;
+	line-height: 2em;
+	background-color: white;
+	margin-bottom: 0.5em;
+	border-right: 0.5em solid #C7C7C7;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+.menu a{
+	text-decoration: none;
+}
+.menu li:hover{
+	background-color: #3B3B3B;
+	color: white;
+	width: 17.5em;
+}
+body{
+	background-color: #C7C7C7;
+}
+
+#inicio:hover{
+	border-right: 4px solid red;
+}
+
+#produtos:hover{
+	border-right: 4px solid green;
+}
+
+#servicos:hover{
+	border-right: 4px solid blue;
+}
+
+#contatos:hover{
+	border-right: 4px solid orange;
+}
+.ativo{
+	background-color: black !important;
+	color: white !important;
+	border-right: 4px solid gold !important;
+	width: 17.5em !important;
+}
+iframe{
+	height:100%;
+	width:100%;
+	border: none;
+}
+.conteudo{
+	font-family: 'SEGOE UI', sans-serif;
+	font-size: 1.2em;
+	border-radius: 15px;
+	background-color: #DEDEDE;
+	left: 0;
+	right: 0;
+	padding: 15px;
+	height: auto;
+}
+.img_produto{
+	width: 140px;
+	height: 140px;
+}
+.tipo{
+	color: #292929;
+	font-size: 25px;
+	text-align: left;
+	font-family: 'SEGOE UI',sans-serif;
+}
+
+.servicos {
+  color: #fff;
+  font-style: normal;
+  font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 2px;
+  text-align: center;
+  border-style: none;
+  min-width: 630px
+}
+
+.servicos th {
+  background-color: #E56717;
+}
+
+.servicos th:first-child {
+  border-top-left-radius: 3px
+}
+
+.servicos th:last-child {
+  border-top-right-radius: 3px;
+  width: 100px
+}
+
+.servicos thead tr {
+  pointer-events: none
+}
+
+.servicos tbody tr {
+  cursor: default
+}
+
+.servicos tr {
+  background-color: #525252;
+  height: 25px;
+  color: #2f2f2f
+}
+
+.servicos .prioridade {
+  background-color: #940905
+}
+
+.servicos .sem_visualizar {
+  background-color: #3b3b3b
+}
+
+.servicos .visualizada {
+  background-color: #525252
+}
+
+.servicos tr th {
+  color: #fff;
+  border: none
+}
+
+.servicos tr td {
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #3d3d3d
+}
+
+a.acao {
+  display: none
+}
+
+.servicos tr:hover {
+  background-color: #1f1f1f;
+  -webkit-transition: background .2s ease-out;
+  -moz-transition: background .2s ease-out;
+  -o-transition: background .2s ease-out;
+  -ms-transition: background .2s ease-out;
+  transition: background .2s ease-out
+}
+
+.servicos tr:hover a.acao {
+  display: inline;
+  color: #fff
+}
+
+.prod{
+  margin: 5px;
+  display: inline-block;
+  border: 1px solid gray;
+  width: 180px;
+  list-style-type: none;
+  padding:0;
+  background-color: black;
+  border-radius: 5px;
+}
+.nome{
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+.imagem{
+  min-height: 180px;
+  min-width: 180px;
+  vertical-align: middle;
+  background-color: white;  
+  display: inline-block;
+}
+.imagem img{
+  vertical-align: middle;
+  max-width: 100%;
+ }
+.preco{
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 40px;
+  color: white;
+  height: 40px;
+}
+.comprar{
+  width: 100%;
+  padding-left: 0;
+  background-color: #0fc0fc;
+  color: white;
+  font-family: 'SEGOE UI', sans-serif;
+  font-size: 15px;
+  border-style: none; 
+  height: 30px;
+}
+.comprar:hover{
+  background-color: #07A4DA;
+}
