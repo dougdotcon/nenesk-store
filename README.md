@@ -6,7 +6,7 @@
 </h1>
 
 <p align="center">
-  <img src="@tela.png" alt="Tela do projeto NeneskStore" width="100%"/>
+  <img src="/screenshots/tela.png" alt="Tela do projeto NeneskStore" width="100%"/>
 </p>
 
 ## 💻 Projeto
