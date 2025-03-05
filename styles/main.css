@@ -4,45 +4,116 @@ main {
     justify-content: space-between;
     flex: 1;
     width: 100%;
-    margin: auto;
-    max-width: 1800px;
-    height: -10px;
+    margin: 40px auto;
+    max-width: 1440px;
+    min-height: 70vh;
+    padding: 0 20px;
 }
 
 .main__info {
-    width: 100%;
+    width: 50%;
+    max-width: 600px;
+}
+
+.main__info .main-logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.main__info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--blue);
 }
 
 .main__info p {
-    font-size: 18px;
-    
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-.main__info div { 
+.action-buttons { 
     display: flex;
-    column-gap: 32px;
-
+    column-gap: 20px;
+    margin-top: 30px;
 }
 
-.main__info div a, .main__info div button {
-    width: 100%;
-    padding: 10px 0;
-    border-radius: 3px;
-
-    font-size: 16px;
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1rem;
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 0.3px;
-
-    transform: skew(-10px);
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
-.main__info div a {
+.btn-primary {
     background: var(--blue);
+    color: var(--text);
 }
 
-.main__info div button {
+.btn-primary:hover {
+    background: #0066a6;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
     background: transparent;
-    border: 1px solid var(--yellow);  
+    border: 2px solid var(--yellow);
+    color: var(--yellow);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 182, 193, 0.1);
+    transform: translateY(-3px);
+}
+
+.main-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-image img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(177, 156, 217, 0.5));
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    main {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main__info {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+    
+    .main-image {
+        width: 100%;
+    }
+    
+    .action-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .action-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
 }

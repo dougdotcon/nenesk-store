@@ -1,25 +1,42 @@
 @import url('./background.css');
 @import url('./header.css');
 @import url('./main.css');
+@import url('./products.css');
+@import url('./services.css');
+@import url('./contact.css');
+@import url('./footer.css');
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 :root {
   --text: #EDF1F7;
-  --red: #B19CD9; /* Roxo claro */
-  --blue: #FFA500; /* Laranja */
-  --green: #0077BE; /* Azul oceano */
-  --yellow: #FFB6C1; /* Rosa claro */
+  --purple: #8257e6;
+  --purple-rgb: 130, 87, 230;
+  --blue: #6a5be2;
+  --orange: #fd951f;
+  --pink: #ff79c6;
+  --dark: #13151f;
+  --dark-blue: #1e2029;
+  --dark-900: #1f2029;
+  --dark-800: #1f2029;
+  --dark-700: #353646;
+  --gray-100: #eeeef2;
+  --gray-300: #9699b0;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
 }
 
 body, button, a {
@@ -29,18 +46,113 @@ body, button, a {
 
 a {
   text-decoration: none;
+  transition: var(--transition);
 }
 
-button:hover {
+button {
   cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  outline: none;
 }
 
 #app {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  min-height: 100vh;
+  width: 100%;
 }
+
+/* Estilos para tooltips */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  background-color: rgba(19, 21, 31, 0.9);
+  color: var(--text);
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Estilos para animações */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s ease forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos comuns para todas as páginas */
+.page-title {
+  font-size: 2.5rem;
+  margin: 40px 0;
+  text-align: center;
+  color: var(--text);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--purple), var(--blue));
+  border-radius: 2px;
+}
+
+.conteudo {
+  background-color: rgba(10, 12, 16, 0.7);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: var(--shadow);
+}
+
 .div-esquerda{
 	position: fixed;
 	top: 0;
